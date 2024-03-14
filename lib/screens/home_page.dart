@@ -9,12 +9,15 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,
-          title: Text("C A R"),
+          title: const Text("C A R"),
         ),
         body: Container(
+          width: double.infinity,
+          height: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://i.pinimg.com/originals/b1/3a/81/b13a81281d3d0c822a05b6280b3e7781.jpg")
+              image: NetworkImage("https://i.pinimg.com/originals/b1/3a/81/b13a81281d3d0c822a05b6280b3e7781.jpg"),
+              fit: BoxFit.fill
             )
           ),
         ),
