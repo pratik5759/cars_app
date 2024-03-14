@@ -1,14 +1,43 @@
+import 'package:cars_app/data/car_types.dart';
 import 'package:flutter/material.dart';
 
-class CarTypesScreen extends StatelessWidget{
-
-
+class CarTypesScreen extends StatelessWidget {
   @override
-  Widget build(context){
+  Widget build(context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(child: Text("Car types screen")),
-    );
+      body: GridView.builder(
+        itemCount: CarData.liCars.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 16 / 9,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 5),
+        itemBuilder: (BuildContext context, int index) {
+          Map<String, dynamic> car = CarData.liCars[index];
 
+          return ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Stack(
+              children: [
+                Image.network(
+                  CarData.liCars[index]['cCategoryImageUrl'],
+                  fit: BoxFit.fitWidth,
+                ),
+                Center(
+                  child: Text(
+                    CarData.liCars[index]["cCategory"],
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
   }
 }
