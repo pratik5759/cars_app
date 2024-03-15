@@ -1,4 +1,4 @@
-import 'package:cars_app/screens/car_types.dart';
+import 'package:cars_app/screens/car_types_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../custom_widgets/custom_textfeild.dart';
@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                     height: 45,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => CarTypesScreen(),));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CarTypesScreen(),));
                       },
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(Colors.white),
