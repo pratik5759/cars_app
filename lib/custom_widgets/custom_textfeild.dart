@@ -8,7 +8,6 @@ class CustomTextFeild extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width:  double.infinity,
-      height: 30,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: TextField(

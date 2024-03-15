@@ -1,11 +1,13 @@
-import 'package:cars_app/data/car_types.dart';
+import 'package:cars_app/data/cars_data.dart';
 import 'package:flutter/material.dart';
 
 class CarTypesScreen extends StatelessWidget {
   @override
   Widget build(context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("CAR CATEGORIES"),
+      ),
       body: GridView.builder(
         itemCount: CarData.liCars.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -23,6 +25,7 @@ class CarTypesScreen extends StatelessWidget {
                 Image.network(
                   CarData.liCars[index]['cCategoryImageUrl'],
                   fit: BoxFit.fitWidth,
+                  width: double.infinity,
                 ),
                 Center(
                   child: Text(
