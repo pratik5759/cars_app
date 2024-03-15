@@ -21,6 +21,8 @@ class CarTypesScreen extends StatelessWidget {
           Map<String, dynamic> car = CarData.liCars[index];
 
           return carImageGrid(context, index);
+
+
         },
       ),
     );
